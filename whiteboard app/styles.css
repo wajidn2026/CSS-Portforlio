@@ -1,0 +1,155 @@
+@import url(https://github.com/googlefonts/Michroma-font);
+
+body {
+    font-family: "Quicksand", sans-serif;
+
+    background-color: rgb(58, 245, 129);
+    color: rgb(238, 234, 31);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 95%;
+    max-width: 900px;
+}
+
+.toolbar {
+    width: 100%;
+    background-color: darkblue;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.color-palette {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.color-swatch {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out, 
+}
+
+#color-swatch:hover {
+    transform: scale(1.15);
+}
+
+.color-swatch:active {
+    border-color: yellow;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgb(255, 255, 0);
+}
+
+.tools {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#clear-btn {
+    padding: 0.5rem 1rem;
+    background-color: orangered;
+    border: none;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#clear-btn:hover {
+    background-color: rgb(199, 75, 26)
+}
+
+input[type="range"] {
+    cursor: pointer;
+}
+
+#whiteboard {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    cursor: crosshair;
+
+    animation: zoomIn 0.7s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    animation: fadeInDown 0.7s ease-in-out;
+}
+
+.home-btn {
+    position: fixed;
+    left: 2vmin;
+    top: 2vmin;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+    padding: 1vmin 1.5vmin;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 9999;
+    border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
